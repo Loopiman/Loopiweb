@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap%27");
+
+body {
+  margin: 0 auto;
+  background-color: #24252a;
+  color: antiquewhite;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  /*margin-top: 8px;*/
+  height: 70px;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.logo span:hover {
+  color: red;
+  transition-duration: 1s;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+.nav-item {
+  padding: 0 20px;
+}
+
+.lien {
+  text-decoration: none;
+  color: antiquewhite;
+}
+.lien2 {
+  padding: 9px 20px;
+}
+
+.login-button {
+  border: solid 2px gray;
+  border-radius: 50px;
+  font-size: 12px;
+  padding: 9px 0px;
+}
+
+.login-button {
+  border: solid 2px gray;
+  border-radius: 50px;
+  font-size: 12px;
+  padding: 9px 0px;
+}
+.login-button a {
+  color: gray;
+}
+
+.login-button a:hover {
+  color: #fff;
+  transition-duration: 0.3s;
+}
+
+.login-button:hover {
+  border: 2px solid #fff;
+  transition-duration: 0.3s;
+}
+
+/*Principal-content*/
+.principal-content {
+  background-color: #34383c;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenu {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.avatar img,
+.dashboard img {
+  height: 50px;
+  border-radius: 100%;
+}
+
+.tag {
+  padding-left: 10px;
+}
+
+.row-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.setting {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  padding: 6%;
+}
+
+.dashboard {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.setting {
+  width: calc(33% - 70px);
+  display: flex;
+  align-items: center;
+  background-color: #24252a;
+  padding: 25px 30px 25px 20px;
+  margin: 10px;
+  border: 2px solid #1f2025e1;
+  border-radius: 1%;
+}
+
+.setting img {
+  height: 50px;
+}
+
+.informations {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.informations .titre {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.infos {
+  font-weight: 200;
+}
+
+/* tableau en attendant*/
+.table-content {
+  background-color: #34383c;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#titre {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.tag {
+  text-align: center;
+}
+
+.name {
+  text-align: center;
+}
+
+.date {
+  text-align: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(172, 61, 61);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(172, 61, 61);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.scroll {
+  overflow: auto;
+  margin: 0 auto;
+  width: 100%;
+}
+.add {
+  display: flex;
+  margin-top: 3%;
+  background-color: red;
+}
+.label {
+  display: flex;
+  justify-content: space-around;
+}
+
