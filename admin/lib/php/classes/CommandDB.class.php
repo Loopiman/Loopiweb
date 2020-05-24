@@ -52,13 +52,27 @@ class CommandDB extends Guild
     public function addCommand($name, $response)
     {
         try {
-            print  $_SESSION['guild_id'];
             session_start();
-            $query = "insert into command(name, response) values(:name, :response) and guild_id =:guildid";
+            $query = "insert into command(name, response) values(:name, :response)";
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':name', $name);
             $resultset->bindValue(':response', $response);
-            $resultset->bindValue(':guildid', $_SESSION['guild_id']);
+            $resultset->execute();
+            $query = "insert into execute(command_id, guild_id, enabled)
+            values((select max(command_id) from command), '" . $_SESSION['guild_id'] . "', true)";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
+    public function deleteCommand($id)
+    {
+        try {
+            session_start();
+            $query = "delete from command where command_id = :id";
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':id', $id);
             $resultset->execute();
         } catch (PDOException $e) {
             print $e->getMessage();

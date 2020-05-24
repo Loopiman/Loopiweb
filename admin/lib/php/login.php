@@ -1,5 +1,8 @@
-
 <?php
+// Ce code est repris de ce lien github que j'ai adapté en fonction de mes besoins 
+//https://gist.github.com/Jengas/ad128715cb4f73f5cde9c467edf64b00
+
+
 error_reporting(E_ALL);
 define('OAUTH2_CLIENT_ID', '606160268648644630');
 define('OAUTH2_CLIENT_SECRET', 'RZH64Eoiz9u-yB8Uq0aV6_dVkxBIPAnt');
@@ -13,7 +16,7 @@ $apiURLguild = 'https://discordapp.com/api/users/@me/guilds';
 if (get('action') == 'login') {
   $params = array(
     'client_id' => OAUTH2_CLIENT_ID,
-    'redirect_uri' => 'https://octogone.xyz/index.php?page=redirect.php',
+    'redirect_uri' => 'https://octogone.xyz/index.php?page=redirect',
     'response_type' => 'code',
     'scope' => 'identify guilds email'
   );
@@ -27,7 +30,7 @@ if (get('code')) {
     "grant_type" => "authorization_code",
     'client_id' => OAUTH2_CLIENT_ID,
     'client_secret' => OAUTH2_CLIENT_SECRET,
-    'redirect_uri' => 'https://octogone.xyz/index.php?page=redirect.php',
+    'redirect_uri' => 'https://octogone.xyz/index.php?page=redirect',
     'code' => get('code')
   ));
   $logout_token = $token->access_token;
@@ -52,7 +55,7 @@ if (get('action') == 'logout') {
   unset($_SESSION['access_token']);
   $_SESSION['connected'] = false;
   $_SESSION['user'] = null;
-  header('Location: https://octogone.xyz/index.php?page=accueil.php');
+  header('Location: https://octogone.xyz/index.php?page=accueil');
   die();
 }
 

@@ -1,3 +1,3 @@
 <section class="principal-content">
-  ERROR 404
+  <h1>Page inexistante</h1>
 </section>

@@ -5,37 +5,30 @@ $cnx = Connection::getInstance($dsn, $user, $pass);
 include './admin/lib/php/login.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loopi - The Discord Bot</title>
   <link rel="shortcut icon" href="./admin/images/inf.png">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- <link rel="stylesheet" href="./admin/lib/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="css/wickedcss.min.css">
   <link rel="stylesheet" href="./admin/lib/css/hover-min.css">
-  <link rel="stylesheet" href="./admin/lib/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../admin/lib/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   <script type="text/javascript" src="./admin/lib/js/fonctionsJquery.js"></script>
-  <meta name="viewport" content="width-device-width, initial-scale=1" />
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
+<?php
+if (file_exists('./lib/php/menu.php')) {
+  include('./lib/php/menu.php');
+}
+?>
 
 <body>
-  <nav class="menu">
-    <div class="menu-content">
-      <a href="index.php?page=accueil.php" class="hvr-float-shadow logo lien">
-        <span>Loopi</span>
-      </a>
-      <?php
-      if (file_exists("./lib/php/menu.php")) {
-        include('./lib/php/menu.php');
-      }
-      ?>
-    </div>
-    <?php if ($_SESSION['connected'] == false) echo ('<div class="login-button"><a href="?action=login" id="test" class="lien lien2">Login</a></div>'); ?>
-    <?php if ($_SESSION['connected'] == true) echo ('<div class="login-button"><a href="?action=logout" class="lien lien2">Logout</a></div>'); ?>
-  </nav>
   <div>
     <main>
       <?php
@@ -43,7 +36,7 @@ include './admin/lib/php/login.php';
         $_SESSION['page'] = "accueil.php";
       }
       if (isset($_GET['page'])) {
-        $_SESSION['page'] = $_GET['page'];
+        $_SESSION['page'] = $_GET['page'] . ".php";
       }
       if (file_exists("pages/" . $_SESSION['page'])) {
         include("pages/" . $_SESSION['page']);
