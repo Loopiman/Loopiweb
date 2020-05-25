@@ -1,2 +1,2 @@
-admin/lib/php/
-.htaccess
+!admin/lib/php/dbConnect.php
+!.htaccess

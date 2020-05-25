@@ -1,35 +1,45 @@
 $(document).ready(function () {
-  if (location.href.split("/").slice(-1) == "index.php?page=accueil") {
-    //fonction qui permet que lorsqu'on appuie sur les flèches du haut et du bas, on puisse naviguer entre les liens
-    //de la page accueil
+  //fonction qui permet que lorsqu'on appuie sur les flèches du haut et du bas, on puisse naviguer entre les liens
+  //de la page accueil
 
-    //variable qui correspondent à l'id
-    var current = 1;
-    window.location = "#1";
-    $(document).keydown(function (e) {
-      switch (e.which) {
-        //flèche du bas
-        case 40:
-          if (current < 3) {
-            current++;
-            //navigation vers le lien
-            window.location = "#" + current;
-          }
-          break;
-        //flèche du haut
-        case 38:
-          if (current > 1) {
-            current--;
-            window.location = "#" + current;
-          }
-          break;
-        default:
-          return;
-      }
-      e.preventDefault();
-    });
+  //variable qui correspondent à l'id
+  var current = 1;
+  $(".down").click(function () {
+    if (current < 3) {
+      current++;
+      //navigation vers le lien
+      window.location = "#" + current;
+    }
+  });
+  $(".up").click(function () {
+    if (current > 1) {
+      current--;
+      window.location = "#" + current;
+    }
+  });
+  $(document).keydown(function (e) {
+    switch (e.which) {
+      //flèche du bas
+      case 40:
+        if (current < 3) {
+          current++;
+          //navigation vers le lien
+          window.location = "#" + current;
+        }
+        break;
+      //flèche du haut
+      case 38:
+        if (current > 1) {
+          current--;
+          window.location = "#" + current;
+        }
+        break;
+      default:
+        return;
+    }
+    e.preventDefault();
+  });
 
-  }
   //ajax pour l'activation de la commande
   $(".checkbox").change(function () {
     var parametre;
@@ -165,34 +175,26 @@ $(document).ready(function () {
               member_role = tab[j].name;
             }
           }
-          $("#tdata")
-            .append(
-              '<tr class="liste_membre" data-search = "' +
-                dt.tag +
-                '">' +
-                '<td scope="row" class="avatar" >' +
-                '<img class="avatar-icon" id="user_avatar" src="' +
-                (dt.avatar ? dt.avatar : "./admin/images/icon.png") +
-                '">' +
-                '<span class="colname tag">' +
-                dt.tag +
-                "</span>" +
-                "</td>" +
-                '<td style="vertical-align:middle" id="account_join" class="colname td-center">' +
-                member_role +
-                "</td>" +
-                '<td style="vertical-align:middle" id="account_join" class="colname td-center">' +
-                dt.account_join +
-                "</td>" +
-                +"</tr>"
-            )
-            .after(function () {
-              const sr = ScrollReveal({
-                duration: 200,
-              });
-
-              sr.reveal("#tdata tr", { delay: 100 });
-            });
+          $("#tdata").append(
+            '<tr class="liste_membre" data-search = "' +
+              dt.tag +
+              '">' +
+              '<td scope="row" class="avatar" >' +
+              '<img class="avatar-icon" id="user_avatar" src="' +
+              (dt.avatar ? dt.avatar : "./admin/images/icon.png") +
+              '">' +
+              '<span class="colname tag">' +
+              dt.tag +
+              "</span>" +
+              "</td>" +
+              '<td style="vertical-align:middle" id="account_join" class="colname td-center">' +
+              member_role +
+              "</td>" +
+              '<td style="vertical-align:middle" id="account_join" class="colname td-center">' +
+              dt.account_join +
+              "</td>" +
+              +"</tr>"
+          );
         }
       });
     },
@@ -354,62 +356,6 @@ $(document).ready(function () {
     $("tr.liste_membre.find").each(function (index) {
       $(this).css("display", "table-row").removeClass("find");
     });
-
-    /*tri_tag = 1;
-    tri_role = 1;
-    tri_date = 1;
-    $("#arrowr").empty();
-    $("#arrowr").append("<i style='font-size:24px' class='fas'>&#xf0dc;</i>");
-    $("#arrowd").empty();
-    $("#arrowd").append("<i style='font-size:24px' class='fas'>&#xf0dc;</i>");
-    $("#arrowtag").empty();
-    $("#arrowtag").append("<i style='font-size:24px' class='fas'>&#xf0dc;</i>");
-    /*var search = "tag=" + $("#search").val();
-    var retour = $.ajax({
-      type: "GET",
-      url: "/admin/lib/php/ajax/ajaxSelectRole.php",
-      dataType: "json",
-      success: function (data_role) {
-        tab = data_role;
-      },
-    });
-    $.ajax({
-      type: "GET",
-      data: search,
-      dataType: "json",
-      url: "/admin/lib/php/ajax/ajaxSelectMembersTag.php",
-      success: function (data) {
-        $("#tdata:has(td)").remove();
-        data.forEach(function (dt) {
-          var member_role;
-          if (data) {
-            for (var j = 0; j < tab.length; j++) {
-              if (tab[j].pos == dt.pos) {
-                member_role = tab[j].name;
-              }
-            }
-
-            $("#tdata").append(
-              "<tr>" +
-                '<td scope="row" class="avatar" > <img class="avatar-icon" id="user_avatar" src="' +
-                (dt.avatar ? dt.avatar : "./admin/images/icon.png") +
-                '">' +
-                '<span class="colname tag">' +
-                dt.tag +
-                "</span>" +
-                "</td>" +
-                '<td style="vertical-align:middle" id="account_join" class="colname td-center">' +
-                member_role +
-                "</td>" +
-                '<td style="vertical-align:middle" id="account_join" class="colname td-center">' +
-                dt.account_join +
-                "</td>" +
-                +"</tr>"
-            );
-          }
-        });
-      },
-    });*/
   });
   String.prototype.sansAccent = function () {
     var accent = [
@@ -453,17 +399,13 @@ $(document).ready(function () {
     return str;
   };
   //Set
-  const sr = ScrollReveal({
-    duration: 200,
-  });
-
-  sr.reveal("table tr", { delay: 100 });
 
   const sr1 = ScrollReveal({
     delay: 375,
     duration: 2000,
     reset: true,
   });
+  
   sr1.reveal(".accueil .p0", { delay: 500 });
   sr1.reveal(".accueil .p1", { delay: 1000 });
   sr1.reveal(".accueil .p2", { delay: 1500 });

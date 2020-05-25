@@ -28,35 +28,28 @@ $nbr = count($m);
       </div>
     </div>
   </div>
-
   <div class="table-responsive">
     <table class="table table-striped table-dark">
       <tr id="tri">
-        <td style="vertical-align:middle" scope="col" class="name col-4">
-          <span id="tag">Pseudo</span>
+        <td style="vertical-align:middle" scope="col" class="text-center col-4">
+          <span id="tag" class="name">Pseudo</span>
           <span id="arrowtag">
           </span>
         </td>
-        <td style="vertical-align:middle" scope="col" class="name col-4">
-          <span id="pos">Role</span>
+        <td style="vertical-align:middle" scope="col" class="text-center col-4">
+          <span id="pos" class="name">Role</span>
           <span id="arrowr">
           </span>
         </td>
-        <td style="vertical-align:middle" scope="col" class="name col-4">
-          <span id="account_join">Date adhésion</span>
+        <td style="vertical-align:middle" scope="col" class="text-center col-4">
+          <span id="account_join" class="name">Date adhésion</span>
           <span id="arrowd">
           </span>
         </td>
       </tr>
-      <?php
-      for ($i = 0; $i < $nbr; $i++) {
-      ?>
-        <tbody id="tdata">
+      <tbody id="tdata">
 
-        </tbody>
-      <?php
-      }
-      ?>
+      </tbody>
     </table>
   </div>
 </section>

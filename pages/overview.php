@@ -19,7 +19,7 @@ $nbr = count($_SESSION['guildo']);
     <div class="table-responsive">
       <table class="table table-striped table-dark">
         <tr>
-          <td scope="col" class="name" colspan="2">Serveurs</td>
+          <td scope="col" class="name text-center" colspan="2">Serveurs</td>
         </tr>
         <?php
         for ($i = 0; $i < $nbr; $i++) {

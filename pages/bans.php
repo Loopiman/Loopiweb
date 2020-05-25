@@ -28,9 +28,9 @@
       <div class="table-responsive">
         <table class="table table-striped table-dark">
           <tr>
-            <td style="vertical-align:middle" scope="col" class="name">Pseudo</td>
-            <td style="vertical-align:middle" scope="col" class="name">Raison</td>
-            <td style="vertical-align:middle" scope="col" class="name">Date du ban</td>
+            <td style="vertical-align:middle" scope="col" class="name text-center">Pseudo</td>
+            <td style="vertical-align:middle" scope="col" class="name text-center">Raison</td>
+            <td style="vertical-align:middle" scope="col" class="name text-center">Date du ban</td>
           </tr>
           <?php
           for ($i = 0; $i < $nbr; $i++) {

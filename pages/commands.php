@@ -28,10 +28,10 @@ $nbr = count($c);
     <div class="table-responsive">
       <table class="table table-striped table-dark">
         <tr>
-          <td style="vertical-align:middle" scope="col" class="name">nom</td>
-          <td style="vertical-align:middle" scope="col" class="name">Description</td>
-          <td style="vertical-align:middle" scope="col" class="name">Active</td>
-          <td style="vertical-align:middle" scope="col" class="name">supprimer</td>
+          <td style="vertical-align:middle" scope="col" class="name text-center">nom</td>
+          <td style="vertical-align:middle" scope="col" class="name text-center">Description</td>
+          <td style="vertical-align:middle" scope="col" class="name text-center">Active</td>
+          <td style="vertical-align:middle" scope="col" class="name text-center">supprimer</td>
         </tr>
         <?php
         for ($i = 0; $i < $nbr; $i++) {
