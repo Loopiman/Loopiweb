@@ -39,8 +39,8 @@
         </svg>
       </div>
     </a>
-    <h1 class="p0">Version beta</h1>
-    <p class="p1">Loopi est encore en version beta</p>
-    <p class="p2">Cependant, vous pouvez tout de même l'ajouter sur votre serveur sans problèmes, ce qui permettra de mieux affiner les futurs possiblités en fonction de vos feedback</p>
+    <h1 class="p1">Version beta</h1>
+    <p class="p2">Loopi est encore en version beta</p>
+    <p class="p3">Cependant, vous pouvez tout de même l'ajouter sur votre serveur sans problèmes, ce qui permettra de mieux affiner les futurs possiblités en fonction de vos feedback</p>
   </div>
 </section>

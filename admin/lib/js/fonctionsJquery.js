@@ -406,11 +406,11 @@ $(document).ready(function () {
     reset: true,
   });
   
-  sr1.reveal(".accueil .p0", { delay: 500 });
-  sr1.reveal(".accueil .p1", { delay: 1000 });
-  sr1.reveal(".accueil .p2", { delay: 1500 });
-  sr1.reveal(".accueil .p3", { delay: 2000 });
-  sr1.reveal(".accueil .p4", { delay: 2500 });
+  sr1.reveal(".accueil .p0", { delay: 300 });
+  sr1.reveal(".accueil .p1", { delay: 600 });
+  sr1.reveal(".accueil .p2", { delay: 900 });
+  sr1.reveal(".accueil .p3", { delay: 1200 });
+  sr1.reveal(".accueil .p4", { delay: 1500 });
   sr1.reveal(".tuto h1", { delay: 300 });
   sr1.reveal(".tuto .img1", { delay: 1000 });
   sr1.reveal(".tuto .img2", { delay: 1500 });

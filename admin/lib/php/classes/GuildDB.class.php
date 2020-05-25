@@ -17,7 +17,7 @@ class GuildDB extends Guild
     {
         try {
             $this->_db->beginTransaction();
-            $query = "select g.available, g.name from guild g join join_guild j on g.guild_id = j.guild_id where j.admin = true and j.member_id = '" . $_SESSION['user'] . "'";
+            $query = "select g.guild_id as id, g.available, g.name from guild g join join_guild j on g.guild_id = j.guild_id where j.admin = true and j.member_id = '" . $_SESSION['user'] . "'";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
             $this->_db->commit();
@@ -59,6 +59,25 @@ class GuildDB extends Guild
         try {
             $this->_db->beginTransaction();
             $query = "select count(*) as isadmin from join_guild where member_id = '" . $_SESSION['user'] . "' and guild_id = '" . $_SESSION['guild_id'] . "' and admin = true ";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            $this->_db->commit();
+            $res = $resultset->fetch();
+            $_array[0] = new Guild($res);
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+        if (!empty($_array)) {
+            return $_array;
+        } else {
+            return null;
+        }
+    }
+    public function verifGuild()
+    {
+        try {
+            $this->_db->beginTransaction();
+            $query = "select available from guild where guild_id = '" . $_SESSION['guild_id'] . "'";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
             $this->_db->commit();

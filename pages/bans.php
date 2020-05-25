@@ -41,7 +41,7 @@
                 <span class="colname tag"><?= $b[$i]->tag ?></span>
               </td>
               <td style="vertical-align:middle" class="colname"><?= $b[$i]->reason ? $b[$i]->reason : "raison inconnue" ?></td>
-              <td style="vertical-align:middle" class="colname"><?= ($b[$i]->ban ? $b[$i]->ban : 'indisponible') ?></td>
+              <td style="vertical-align:middle" class="colname"><?= ($b[$i]->ban_date ? $b[$i]->ban_date : 'indisponible') ?></td>
             </tr>
           <?php
           }

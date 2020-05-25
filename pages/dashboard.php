@@ -4,7 +4,10 @@ $_SESSION['guild_id'] = $_GET['guild'];
 $v = array();
 $verif = new GuildDB($cnx);
 $v = $verif->verifAdmin();
-if (!$v[0]->isadmin) header('Location: https://octogone.xyz/index.php?page=overview');
+$vg = array();
+$verifGuild = new GuildDB($cnx);
+$vg = $verifGuild->verifGuild();
+if (!$v[0]->isadmin || !$vg[0]->available) header('Location: https://octogone.xyz/index.php?page=overview');
 
 $g = array();
 $guild = new GuildDB($cnx);

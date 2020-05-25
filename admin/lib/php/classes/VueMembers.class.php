@@ -17,7 +17,7 @@ class VueMembers
         try {
             $query = "select member.tag, join_guild.xp, member.avatar, max(role.position) as pos, join_guild.account_join
             from member join has_role on (member.member_id=has_role.member_id) join role on (has_role.role_id=role.role_id) join join_guild on member.member_id = join_guild.member_id where join_guild.guild_id = '" . $_SESSION['guild_id'] . "' and role.guild_id = '" . $_SESSION['guild_id'] . "'
-            and member.tag like '%" . $tag . "%' group by username order by pos desc, member.tag ";
+            and member.tag like '%" . $tag . "%' and join_guild.available = true group by username order by pos desc, member.tag ";
             //, pos desc 
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
@@ -45,6 +45,7 @@ class VueMembers
                 join join_guild on member.member_id = join_guild.member_id
                 where join_guild.guild_id = '" . $_SESSION['guild_id'] . "'
                 and role.guild_id = '" . $_SESSION['guild_id'] . "'
+                and join_guild.available = true 
                 group by username
                 order by
                 (case :tri when 'tag' then tag end) asc,
@@ -58,6 +59,7 @@ class VueMembers
                 join join_guild on member.member_id = join_guild.member_id
                 where join_guild.guild_id = '" . $_SESSION['guild_id'] . "'
                 and role.guild_id = '" . $_SESSION['guild_id'] . "'
+                and join_guild.available = true 
                 group by username
                 order by 
                 (case :tri when 'tag' then tag end) desc,
