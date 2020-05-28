@@ -163,7 +163,7 @@ $(document).ready(function () {
     data: search,
     url: "/admin/lib/php/ajax/ajaxSelectMembersTag.php",
     success: function (data) {
-      $("#tdata:has(td)").remove();
+      $("#tdata tr").children().remove();
       data.forEach(function (dt) {
         var member_role;
         if (data) {
@@ -286,7 +286,6 @@ $(document).ready(function () {
     }
 
     parametre = "tri=" + tri + "&sort=" + sort;
-    console.log(parametre);
     var retour = $.ajax({
       type: "GET",
       url: "/admin/lib/php/ajax/ajaxSelectRole.php",
@@ -301,7 +300,7 @@ $(document).ready(function () {
       dataType: "json",
       url: "/admin/lib/php/ajax/ajaxSelectMembersTri.php",
       success: function (data) {
-        $("#tdata:has(td)").remove();
+        $("#tdata tr").children().remove();
         data.forEach(function (dt) {
           var member_role;
           if (data) {

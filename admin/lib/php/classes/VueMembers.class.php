@@ -48,8 +48,8 @@ class VueMembers
                 and join_guild.available = true 
                 group by username
                 order by
-                (case :tri when 'tag' then tag end) asc,
-                (case :tri when 'account_join' then account_join end) asc  ,max(role.position) asc";
+                (case :tri when 'tag' then tag end) asc, max(role.position) asc, account_join asc,
+                (case :tri when 'account_join' then account_join end) asc  ,max(role.position) asc, tag asc";
             }
             else{
                 $query = "select member.tag, join_guild.xp, member.avatar, max(role.position) as pos, join_guild.account_join

@@ -12,13 +12,13 @@
     <h1>DashBoard - Commandes</h1>
     <img class="img-fluid img1 rounded" src="./admin/images/4.png" alt="dashboard commands">
   </div>
+  <div class="container text-center tuto">
+    <h1>Ajout de commandes</h1>
+    <img class=" img1 rounded" src="./admin/images/add.gif" alt="dashboard commands">
+  </div>
   <div class="container-fluid text-center tuto">
     <h1>Désactivation</h1>
     <img class="img-fluid img1 rounded" src="./admin/images/toggle.gif" alt="dashboard commands">
-  </div>
-  <div class="container-fluid text-center tuto">
-    <h1>Ajout de commandes</h1>
-    <img class="img-fluid img1 rounded" src="./admin/images/add.gif" alt="dashboard commands">
   </div>
   <div class="container-fluid text-center tuto">
     <h1>Supression de commandes</h1>
